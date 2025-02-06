@@ -8,3 +8,11 @@ export function useEngine () {
   }
   return engine
 }
+
+export function useScene () {
+  const scene = inject('bx_scene')
+  if (!scene) {
+    throw new Error('useScene() must be used inside a <Scene> component')
+  }
+  return scene
+}

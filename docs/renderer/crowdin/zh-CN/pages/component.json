@@ -5,6 +5,10 @@
       {
         "link": "/engine",
         "text": "Engine"
+      },
+      {
+        "link": "/scene",
+        "text": "Scene"
       }
     ]
   }
