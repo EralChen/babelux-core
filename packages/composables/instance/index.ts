@@ -1,4 +1,4 @@
-import type { Engine } from '@babylonjs/core'
+import type { Engine, Scene } from '@babylonjs/core'
 import { inject } from 'vue'
 
 export function useEngine () {
@@ -10,7 +10,7 @@ export function useEngine () {
 }
 
 export function useScene () {
-  const scene = inject('bx_scene')
+  const scene = inject<Scene>('bx_scene')
   if (!scene) {
     throw new Error('useScene() must be used inside a <Scene> component')
   }
