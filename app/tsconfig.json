@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "rootDir": "../",
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "allowJs": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "types": [
-      "node"
-    ],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
@@ -24,18 +21,17 @@
         "src/components/*"
       ]
     },
-    "lib": ["esnext", "dom"],
-    "rootDir": "../",
-
-
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true
   },
   "include": [
-    "src/**/*.ts", 
-    "src/**/*.d.ts", 
-    "src/**/*.tsx", 
-    "src/**/*.vue", 
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
     "typings/**/*.d.ts",
     "../typings/**/*.d.ts",
     "vite.config.mts"
