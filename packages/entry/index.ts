@@ -1,3 +1,3 @@
-export * from '@skzz-template/shared'
+export * from '@babelux-core/shared'
 
 /* [PLACEHOLDER] components export */

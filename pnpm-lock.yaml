@@ -14,28 +14,28 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.5.13(typescript@5.6.3))
-      '@skzz-template/api':
+      '@babelux-core/api':
         specifier: workspace:*
         version: link:packages/api
-      '@skzz-template/components':
+      '@babelux-core/components':
         specifier: workspace:*
         version: link:packages/components
-      '@skzz-template/composables':
+      '@babelux-core/composables':
         specifier: workspace:*
         version: link:packages/composables
-      '@skzz-template/shared':
+      '@babelux-core/shared':
         specifier: workspace:*
         version: link:packages/shared
-      '@skzz-template/stores':
+      '@babelux-core/stores':
         specifier: workspace:*
         version: link:packages/stores
-      '@skzz-template/theme':
+      '@babelux-core/theme':
         specifier: workspace:*
         version: link:packages/theme
       '@skzz/platform':
         specifier: 0.0.0-alpha.73
         version: 0.0.0-alpha.73
-      '@skzz/template':
+      '@babelux/core':
         specifier: workspace:*
         version: link:packages/entry
       '@vuesri/core':

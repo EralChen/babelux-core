@@ -2,7 +2,7 @@
 import { props, emits } from './ctx'
 import { defineComponent, onMounted, ref } from 'vue'
 import { SkTablesCheckbox } from '@skzz/platform/components/tables-checkbox'
-import { rUsers } from '@skzz-template/api/user'
+import { rUsers } from '@babelux-core/api/user'
 import { __SkAppTablesV1 } from '@skzz/platform'
 import { Row } from './types'
 

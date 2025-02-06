@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { SkUserSelectTables } from '@skzz-template/components/user-select-tables'
+import { SkUserSelectTables } from '@babelux-core/components/user-select-tables'
 import { ref } from 'vue'
-import { User } from '@skzz-template/api/user'
+import { User } from '@babelux-core/api/user'
 
 const currentUsers = ref<User[]>([])
 </script>

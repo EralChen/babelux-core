@@ -1,5 +1,5 @@
 {
-  "name": "@skzz-template/api",
+  "name": "@babelux-core/api",
   "private": true,
   "module": "index.ts",
   "type": "module",

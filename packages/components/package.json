@@ -1,5 +1,5 @@
 {
-  "name": "@skzz-template/components",
+  "name": "@babelux-core/components",
   "scripts": {
     "build": "gulp -f gulpfile.ts"
   },

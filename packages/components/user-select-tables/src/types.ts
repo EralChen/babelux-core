@@ -1,4 +1,4 @@
-import { User } from '@skzz-template/api/user'
+import { User } from '@babelux-core/api/user'
 
 export type Row = User
 export {}
