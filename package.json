@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "dev": "pnpm run -C app dev",
-    "ssr:dev": "pnpm run -C app-ssr dev",
+    "dev": "pnpm run -C docs dev",
     "lint:fix": "oxlint . --fix",
     "lint": "eslint --fix app-ssr/**/*.{ts,tsx,vue}",
     "build": "pnpm run -C app build",
@@ -22,15 +21,13 @@
   },
   "dependencies": {
     "@arcgis/core": "^4.31.5",
-    "@element-plus/icons-vue": "^2.3.1",
     "@babelux-core/api": "workspace:*",
     "@babelux-core/components": "workspace:*",
     "@babelux-core/composables": "workspace:*",
     "@babelux-core/shared": "workspace:*",
-    "@babelux-core/stores": "workspace:*",
-    "@babelux-core/theme": "workspace:*",
-    "@skzz/platform": "0.0.0-alpha.73",
     "@babelux/core": "workspace:*",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@skzz/platform": "0.0.0-alpha.73",
     "@vuesri/core": "^1.0.59",
     "@vuesri/three": "0.0.4",
     "@vueuse/core": "^11.3.0",

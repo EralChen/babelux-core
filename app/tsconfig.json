@@ -10,8 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "types": [
-      "node",
-      "arcgis-js-api",
+      "node"
     ],
     "baseUrl": ".",
     "paths": {
