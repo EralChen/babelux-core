@@ -1,17 +1,18 @@
 <script lang="ts" setup>
 import type { Light, Mesh } from '@babylonjs/core'
 import { useScene } from '@babelux-core/composables'
-import { Color3, MeshBuilder, StandardMaterial, Vector3 } from '@babylonjs/core'
+import { Color3, MeshBuilder, PBRMaterial, Vector3 } from '@babylonjs/core'
 import { onBeforeUnmount } from 'vue'
 
 const scene = useScene()
 const _meshes: Mesh[] = []
 
-// Create materials
-const shelfMaterial = new StandardMaterial('shelfMaterial', scene)
-shelfMaterial.diffuseColor = new Color3(0.5, 0.5, 0.5) // Gray for shelves
-shelfMaterial.specularColor = new Color3(0.2, 0.2, 0.2)
-shelfMaterial.roughness = 0.6
+// Create materials with PBR
+const shelfMaterial = new PBRMaterial('shelfMaterial', scene)
+shelfMaterial.albedoColor = new Color3(0.6, 0.6, 0.6) // Light gray for shelves
+shelfMaterial.metallic = 0.8 // High metallic for metal-like appearance
+shelfMaterial.roughness = 0.3 // Lower roughness for shinier appearance
+shelfMaterial.microSurface = 0.95 // High micro-surface for clear reflections
 
 // Create shelf structure
 function createShelf (position: Vector3) {

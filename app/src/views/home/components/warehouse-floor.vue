@@ -1,26 +1,40 @@
 <script lang="ts" setup>
 import type { Mesh } from '@babylonjs/core'
 import { useScene } from '@babelux-core/composables'
-import { Color3, MeshBuilder, StandardMaterial, Vector3 } from '@babylonjs/core'
+import { Color3, MeshBuilder, PBRMaterial, Texture, Vector3 } from '@babylonjs/core'
 import { onBeforeUnmount } from 'vue'
 
 const scene = useScene()
 
-// Create floor material
-const floorMaterial = new StandardMaterial('floorMaterial', scene)
-floorMaterial.diffuseColor = new Color3(0.2, 0.2, 0.2) // Dark gray
-floorMaterial.specularColor = new Color3(0.05, 0.05, 0.05) // Low specular reflection
-floorMaterial.roughness = 0.8 // Make it look less shiny
+// Create floor material with PBR
+const floorMaterial = new PBRMaterial('floorMaterial', scene)
+floorMaterial.albedoColor = new Color3(0.2, 0.2, 0.2)
+floorMaterial.metallic = 0.3
+floorMaterial.roughness = 0.4
+floorMaterial.microSurface = 0.9 // High micro-surface for better reflections
+
+// Add some texture detail
+const floorTexture = new Texture('https://playground.babylonjs.com/textures/floor_bump.png', scene)
+floorMaterial.bumpTexture = floorTexture
+if (floorTexture) {
+  floorTexture.uScale = 4
+  floorTexture.vScale = 4
+}
+floorMaterial.useParallax = true
+floorMaterial.useParallaxOcclusion = true
+floorMaterial.parallaxScaleBias = 0.1
 
 // Create floor
 const floor = MeshBuilder.CreateGround('floor', { width: 30, height: 20 }, scene)
 floor.material = floorMaterial
 floor.receiveShadows = true
 
-// Create grid lines material
-const gridMaterial = new StandardMaterial('gridMaterial', scene)
-gridMaterial.diffuseColor = new Color3(0.3, 0.3, 0.3)
+// Create grid lines material with PBR
+const gridMaterial = new PBRMaterial('gridMaterial', scene)
+gridMaterial.albedoColor = new Color3(0.3, 0.3, 0.3)
 gridMaterial.alpha = 0.3
+gridMaterial.metallic = 0.5
+gridMaterial.roughness = 0.3
 
 // Add grid lines
 const gridLines: Mesh[] = []

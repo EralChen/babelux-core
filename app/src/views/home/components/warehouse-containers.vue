@@ -1,16 +1,26 @@
 <script lang="ts" setup>
 import type { AbstractMesh, Light } from '@babylonjs/core'
 import { useScene } from '@babelux-core/composables'
-import { Color3, MeshBuilder, PointerEventTypes, StandardMaterial, Vector3 } from '@babylonjs/core'
+import { Color3, MeshBuilder, PBRMaterial, PointerEventTypes, Texture, Vector3 } from '@babylonjs/core'
 import { onBeforeUnmount, ref } from 'vue'
 
 const scene = useScene()
 
-// Create container material with metallic look
-const containerMaterial = new StandardMaterial('containerMaterial', scene)
-containerMaterial.diffuseColor = new Color3(0.7, 0.3, 0.2) // Reddish brown
-containerMaterial.specularColor = new Color3(0.5, 0.5, 0.5)
-containerMaterial.roughness = 0.4
+// Create container material with PBR for realistic metal appearance
+const containerMaterial = new PBRMaterial('containerMaterial', scene)
+containerMaterial.albedoColor = new Color3(0.7, 0.3, 0.2) // Reddish brown base color
+containerMaterial.metallic = 0.9 // Very metallic
+containerMaterial.roughness = 0.3 // Fairly smooth
+containerMaterial.microSurface = 0.95 // High microsurface for clear reflections
+
+// Add metal texture detail
+const metalTexture = new Texture('https://playground.babylonjs.com/textures/metal.png', scene)
+if (metalTexture) {
+  metalTexture.uScale = 1
+  metalTexture.vScale = 1
+}
+containerMaterial.bumpTexture = metalTexture
+containerMaterial.metallicTexture = metalTexture
 
 // Create containers that can be moved
 const containers: AbstractMesh[] = []
@@ -52,8 +62,9 @@ scene.onPointerObservable.add((pointerInfo) => {
         startingPoint = pointerInfo.pickInfo.pickedPoint?.clone() || null
 
         // Highlight selected container
-        if (pickedMesh.material instanceof StandardMaterial) {
-          pickedMesh.material.emissiveColor = new Color3(0.2, 0.2, 0.2)
+        if (pickedMesh.material instanceof PBRMaterial) {
+          pickedMesh.material.emissiveColor = new Color3(0.3, 0.3, 0.3)
+          pickedMesh.material.emissiveIntensity = 0.5
         }
       }
     }
@@ -69,8 +80,9 @@ scene.onPointerObservable.add((pointerInfo) => {
   }
 
   if (pointerInfo.type === PointerEventTypes.POINTERUP) {
-    if (selectedContainer.value && selectedContainer.value.material instanceof StandardMaterial) {
+    if (selectedContainer.value && selectedContainer.value.material instanceof PBRMaterial) {
       selectedContainer.value.material.emissiveColor = new Color3(0, 0, 0)
+      selectedContainer.value.material.emissiveIntensity = 0
     }
     selectedContainer.value = null
     startingPoint = null
