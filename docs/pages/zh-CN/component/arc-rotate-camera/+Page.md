@@ -1,17 +1,20 @@
---- 
+---
 title: ArcRotateCamera
 lang: zh-CN
 ---
 
 # ArcRotateCamera
 
-ArcRotateCamera
-
+[找一个合适的观察视角]( https://doc.cnbabylon.com/8-0-cameras)
 
 ## Basic
 
-:::demo 
+:::demo
 arc-rotate-camera/basic
 :::
 
-## ArcRotateCamera 其他
+## ArcRotateCamera Props
+
+:::props
+arc-rotate-camera/src/ctx
+:::

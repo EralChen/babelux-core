@@ -47,7 +47,6 @@ const light = new HemisphericLight('light', new Vector3(0, 1, 0), scene)
 // - { diameter: 2, segments: 32 }：球体的直径和分段数
 // - scene：球体所属的场景
 const sphere = MeshBuilder.CreateSphere('sphere', { diameter: 2, segments: 32 }, null)
-
 // 启动引擎的渲染循环
 engine.runRenderLoop(() => {
   // 在每一帧渲染场景
