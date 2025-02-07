@@ -53,10 +53,7 @@ export const props = {
   panningSensibilitis: {
     type: Array as PropType<[number, number][]>,
     default: () => [
-      // [20, 500],
-      // [50, 50],
-      // [100, 25],
-      // [1000, 18],
+
     ],
 
   },

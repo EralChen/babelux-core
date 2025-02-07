@@ -2,7 +2,6 @@
 import { BxArcRotateCamera } from '@babelux-core/components/arc-rotate-camera'
 import { BxEngine } from '@babelux-core/components/engine'
 import { BxScene } from '@babelux-core/components/scene'
-import { Vector3 } from '@babylonjs/core'
 import TestVue from './test.vue'
 </script>
 
@@ -10,10 +9,12 @@ import TestVue from './test.vue'
   <BxEngine>
     <BxScene>
       <BxArcRotateCamera
-        :alpha="Math.PI / 2"
-        :beta="Math.PI / 4"
-        :radius="10"
-        :target="new Vector3(0, 2, 0)"
+        :panning-sensibilitis="[
+          [20, 500],
+          [50, 50],
+          [100, 25],
+          [1000, 18],
+        ]"
       ></BxArcRotateCamera>
 
       <TestVue></TestVue>
