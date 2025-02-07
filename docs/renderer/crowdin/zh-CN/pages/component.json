@@ -9,6 +9,10 @@
       {
         "link": "/scene",
         "text": "Scene"
+      },
+      {
+        "link": "/arc-rotate-camera",
+        "text": "ArcRotateCamera"
       }
     ]
   }
