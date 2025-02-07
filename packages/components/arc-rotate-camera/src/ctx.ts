@@ -49,6 +49,18 @@ export const props = {
     default: undefined,
   },
 
+  // Array of [distance, sensitivity] pairs for distance-based panning sensitivity
+  panningSensibilitis: {
+    type: Array as PropType<[number, number][]>,
+    default: () => [
+      [20, 500], // Close range - more precise control
+      [50, 50], // Medium range
+      [100, 25], // Far range - faster panning
+      [1000, 18],
+    ],
+
+  },
+
 }
 
 export const emits = {
