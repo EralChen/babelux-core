@@ -66,7 +66,9 @@ export default defineConfig(async ({ mode }) => {
     },
 
     plugins: [
-      vueDevTools(),
+      vueDevTools({
+        launchEditor: 'code-insiders',
+      }),
 
       vike({
         prerender: true,
@@ -115,13 +117,7 @@ export default defineConfig(async ({ mode }) => {
 
     },
 
-    css: { // https://www.cnblogs.com/crispyChicken/p/18420010
-      preprocessorOptions: {
-        scss: {
-          api: 'modern',
-        },
-      },
-    },
+  
   }
   return config
 })
