@@ -11,13 +11,13 @@
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.5.2",
     "deepdash-es": "^5.3.9",
-    "path-to-regexp": "^8.2.0",
-    "vue-router": "^4.5.1"
+    "path-to-regexp": "^8.3.0",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^7.2.1",
     "unocss-preset-vunk": "^1.0.4",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vue-tsc": "^3.0.5"
+    "vue-tsc": "^3.2.1"
   }
 }
