@@ -1,23 +1,9 @@
-<script lang="ts">
-import { rTestData } from '@/api/test'
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 
-export default defineComponent({
-  setup () {
-    const testName = ref('')
-    rTestData().then((res) => {
-      testName.value = res.name
-    })
-
-    return {
-      testName,
-    }
-  },
-})
+const data = ref('home')
 </script>
 
 <template>
-  <div class="bg-test">
-    {{ testName }}
-  </div>
+  <div>{{ data }}</div>
 </template>

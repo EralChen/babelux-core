@@ -1,6 +1,5 @@
 <script>
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import { useInitTheme } from '@/composables'
 
 export default {
   name: 'App',
@@ -8,9 +7,6 @@ export default {
     return {
       zhCn,
     }
-  },
-  mounted () {
-    useInitTheme()
   },
 }
 </script>
